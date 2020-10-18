@@ -1,0 +1,17 @@
+/**********Подключение шрифтов********/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap&subset=cyrillic-ext');
+@import "fonts";
+/**********Шрифт по умолчанию********/
+$fontFamily: "Oswald";
+
+
+/**********BOOTSTRAP********/
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+
+body {
+    margin: 0 auto;
+    width: 80%;
+}
