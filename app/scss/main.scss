@@ -1,17 +1,53 @@
-/**********Подключение шрифтов********/
+/********** Подключение шрифтов ********/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap&subset=cyrillic-ext');
 @import "fonts";
+
 /**********Шрифт по умолчанию********/
-$fontFamily: "Oswald";
+$fontFamily: "Roboro", sans-serif;
 
+/********** BOOTSTRAP ********/
+// @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-/**********BOOTSTRAP********/
+/********** Переменные ********/
+$minWidth: 320px;
+$maxWidth: 1920;
+$maxWidthContainer: 1680 + 40;
+$mainColor: #303030;
 
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+/********** Обнуление ********/
 
+* {
+    padding: 0;
+    margin: 0;
+}
 
+/********** Оболочка ********/
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+}
+
+/********** Основная сетка ********/
+.container {
+    max-width: $maxWidthContainer + px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
 body {
-    margin: 0 auto;
-    width: 80%;
+    font-family: $fontFamily;
+    color: $mainColor;
 }
+
+a {
+    color: $mainColor;
+}
+/********** Подключение файлов стилей, форм ... ********/
+
+@import "header";
+

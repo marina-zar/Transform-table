@@ -16,17 +16,25 @@ const fs            = require('fs');
 
 function browsersync() {
     browserSync.init({
-        server: {baseDir: 'app/'},
+        server: {baseDir: 'dist/'},
         notify: false,
         online: true
     })
 }
 
+function html() {
+    return src('app/*.html')
+    .pipe(fileinclude())
+    .pipe(dest('dist'))
+    .pipe(browserSync.stream())
+}
+
+
 function scripts() {
     return src('app/js/app.js')
     .pipe(concat('app.min.js'))
     .pipe(uglify())
-    .pipe(dest('app/js'))
+    .pipe(dest('dist/js'))
     .pipe(browserSync.stream())
 }
 
@@ -36,15 +44,15 @@ function styles() {
     .pipe(concat('app.min.css'))
     .pipe(autoprefixer({ overrideBrowserslist: ['last 10 version'], grid: true } ))
     .pipe(cleancss(( { level: { 1: { specialComments: 0 } }/*, format: 'beautify'*/ })))
-    .pipe(dest('app/css/'))
+    .pipe(dest('dist/css/'))
     .pipe(browserSync.stream())
 }
 
 function images() {
-    return src('app/img/src/**/*')
-    .pipe(newer('app/img/dest/'))
+    return src('app/img/**/*')
+    .pipe(newer('dist/img/'))
     .pipe(imagemin())
-    .pipe(dest('app/img/dest/'))
+    .pipe(dest('dist/img/'))
 }
 
 function cleanimg() {
@@ -55,20 +63,11 @@ function cleandist() {
     return del('dist/**/*', { force: true })
 }
 
-function buildcopy() {
-    return src([
-        'app/css/**/*.min.css',
-        'app/js/**/*.min.js',
-        'app/img/dest/**/*',
-        'app/**/*.html',
-        ], { base: 'app'} )
-    .pipe(dest('dist'))
-}
 
 function startwatch() {
    watch('app/**/' + preprocessor + '/**/*', styles);
    watch(['app/**/*.js', '!app/**/*.min.js'], scripts);
-   watch('app/**/*.html').on('change', browserSync.reload);
+   watch('app/**/*.html').on('change', html, browserSync.reload);
    watch('app/img/src/**/*', images);
 }
 
@@ -77,6 +76,8 @@ exports.scripts     = scripts;
 exports.styles      = styles;
 exports.images      = images;
 exports.cleanimg    = cleanimg;
-exports.build       = series(cleandist, styles, scripts, images, buildcopy)
 
-exports.default     = parallel(styles, scripts, browsersync, startwatch);
+let build       = series(cleandist, html, styles, scripts, images)
+exports.build = build;
+
+exports.default     = parallel(build, browsersync, startwatch);
