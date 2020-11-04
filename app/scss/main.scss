@@ -1,3 +1,7 @@
+
+
+//@import "../../node_modules/normalize-scss/sass/_normalize.scss";
+
 /********** Подключение шрифтов ********/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap&subset=cyrillic-ext');
 @import "fonts";
@@ -19,6 +23,62 @@ $mainColor: #303030;
 * {
     padding: 0;
     margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+:focus, :active {
+    outline: none;
+}
+
+a:focus, a:active {
+    outline: none;
+}
+
+nav, footer, header, aside {
+    display: block;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    //font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+a, a:visited, a:hover {
+    text-decoration: none;
+}
+
+ul, li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 400;
 }
 
 /********** Оболочка ********/

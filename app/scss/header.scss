@@ -29,20 +29,14 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        li {
-            list-style: none;
-        }
     }
     &__link {
+        padding: 10px;
         &:hover {
-            padding: 10px;
             border-radius: 10px;
             background-color: #D5B19B;
         }
     }
-}
-.column-menu__link {
-    text-decoration: none;
 }
 .column-contacts {}
 .column-contacts__timeline {}
