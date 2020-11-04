@@ -11,8 +11,6 @@ const cleancss      = require('gulp-clean-css');
 const imagemin      = require('gulp-imagemin');
 const newer         = require('gulp-newer');
 const del           = require('del');
-const ttf2woff      = require('gulp-ttf2woff');
-const ttf2woff2     = require('gulp-ttf2woff2');
 const fs            = require('fs');
 
 
@@ -49,15 +47,6 @@ function images() {
     .pipe(dest('app/img/dest/'))
 }
 
-function fonts() {
-    src('app/fonts/**/*')
-    .pipe(ttf2woff())
-    .pipe(dest('app/fonts/'));
-    return src('app/fonts/**/*')
-    .pipe(ttf2woff2())
-    .pipe(dest('app/fonts/'));
-}
-
 function cleanimg() {
     return del('app/img/dest/**/*', { force: true })
 }
@@ -76,30 +65,6 @@ function buildcopy() {
     .pipe(dest('dist'))
 }
 
-/*function fontsStyle(params) {
-let file_content = fs.readFileSync(source_folder + '/scss/fonts.scss');
- if (file_content == '') { 
-    fs.writeFile(source_folder + '/scss/fonts.scss', '', cb);
-    return fs.readdir('app/fonts/', function (err, items) { 
-    if (items) {
-        let c_fontname;
-        for (var i = 0; i < items.length; i++) { 
-            let fontname = items[i].split('.');
-            fontname = fontname[0];
-            if (c_fontname != fontname) { 
-                fs.appendFile(source_folder + '/scss/fonts.scss', '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);
-                } 
-                c_fontname = fontname;
-                }
-            }
-        })
-    }
-}
-
-function cb() {
-
-} */
-
 function startwatch() {
    watch('app/**/' + preprocessor + '/**/*', styles);
    watch(['app/**/*.js', '!app/**/*.min.js'], scripts);
@@ -107,14 +72,11 @@ function startwatch() {
    watch('app/img/src/**/*', images);
 }
 
-
-//exports.fontsStyle  = fontsStyle;
-exports.fonts       = fonts;
 exports.browsersync = browsersync;
 exports.scripts     = scripts;
 exports.styles      = styles;
 exports.images      = images;
 exports.cleanimg    = cleanimg;
-exports.build       = series(cleandist, fonts, styles, scripts, images, buildcopy, fontsStyle)
+exports.build       = series(cleandist, styles, scripts, images, buildcopy)
 
-exports.default     = parallel(fonts, styles, scripts, browsersync, startwatch);
+exports.default     = parallel(styles, scripts, browsersync, startwatch);
