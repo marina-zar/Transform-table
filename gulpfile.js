@@ -12,6 +12,7 @@ const imagemin      = require('gulp-imagemin');
 const newer         = require('gulp-newer');
 const del           = require('del');
 const fs            = require('fs');
+const fileinclude   = require('gulp-file-include');
 
 
 function browsersync() {
@@ -77,7 +78,7 @@ exports.styles      = styles;
 exports.images      = images;
 exports.cleanimg    = cleanimg;
 
-let build       = series(cleandist, html, styles, scripts, images)
+let build = series(cleandist, html, styles, scripts, images);
 exports.build = build;
 
 exports.default     = parallel(build, browsersync, startwatch);
