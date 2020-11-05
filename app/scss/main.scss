@@ -4,10 +4,11 @@
 
 /********** Подключение шрифтов ********/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap&subset=cyrillic-ext');
+//@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap&subset=cyrillic-ext');
 @import "fonts";
 
 /**********Шрифт по умолчанию********/
-$fontFamily: "Roboro", sans-serif;
+$fontFamily: "Roboto", sans-serif;
 
 /********** BOOTSTRAP ********/
 // @import "../../node_modules/bootstrap/scss/bootstrap.scss";
@@ -17,6 +18,7 @@ $minWidth: 320px;
 $maxWidth: 1920;
 $maxWidthContainer: 1680 + 40;
 $mainColor: #303030;
+$mainBGC: #D5B19B;
 
 /********** Обнуление ********/
 
@@ -89,7 +91,6 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-
 }
 
 /********** Основная сетка ********/

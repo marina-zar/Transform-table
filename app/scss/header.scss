@@ -34,11 +34,26 @@
         padding: 10px;
         &:hover {
             border-radius: 10px;
-            background-color: #D5B19B;
+            background-color: $mainBGC;
         }
     }
 }
-.column-contacts {}
+.column-contacts {
+    display: flex;
+}
 .column-contacts__timeline {}
-.column-contacts__phone {}
-.column-contacts__callback {}
+.column-contacts__phone {
+    font-weight: 500;
+}
+.column-contacts__callback {
+    padding: 6px 25px;
+    min-width: 195px;
+    background-color: $mainBGC;
+    color: #fff;
+    border-radius: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+}

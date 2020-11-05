@@ -15,6 +15,7 @@ const fs            = require('fs');
 const fileinclude   = require('gulp-file-include');
 
 
+
 function browsersync() {
     browserSync.init({
         server: {baseDir: 'dist/'},
@@ -28,6 +29,11 @@ function html() {
     .pipe(fileinclude())
     .pipe(dest('dist'))
     .pipe(browserSync.stream())
+}
+
+function fonts() {
+    return src('app/fonts/*')
+        .pipe(dest('dist/fonts'))
 }
 
 
@@ -70,6 +76,7 @@ function startwatch() {
    watch(['app/**/*.js', '!app/**/*.min.js'], scripts);
    watch('app/**/*.html').on('change', html, browserSync.reload);
    watch('app/img/src/**/*', images);
+   watch('app/fonts/*', fonts);
 }
 
 exports.browsersync = browsersync;
@@ -78,7 +85,7 @@ exports.styles      = styles;
 exports.images      = images;
 exports.cleanimg    = cleanimg;
 
-let build = series(cleandist, html, styles, scripts, images);
+let build = series(cleandist, html, fonts, styles, scripts, images);
 exports.build = build;
 
 exports.default     = parallel(build, browsersync, startwatch);
