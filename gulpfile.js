@@ -63,7 +63,7 @@ function images() {
 }
 
 function cleanimg() {
-    return del('app/img/dest/**/*', { force: true })
+    return del('app/img/**/*', { force: true })
 }
 
 function cleandist() {
@@ -75,7 +75,7 @@ function startwatch() {
    watch('app/**/' + preprocessor + '/**/*', styles);
    watch(['app/**/*.js', '!app/**/*.min.js'], scripts);
    watch('app/**/*.html').on('change', html, browserSync.reload);
-   watch('app/img/src/**/*', images);
+   watch('app/img/**/*', images);
    watch('app/fonts/*', fonts);
 }
 
