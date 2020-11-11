@@ -104,6 +104,9 @@ h1, h2, h3, h4, h5, h6 {
     max-width: $maxWidthContainer + px;
     margin: 0 auto;
     padding: 0 20px;
+    @media (max-width: $md4 + px) {
+      padding: 0 10px;
+    }
 }
 
 body {
