@@ -110,6 +110,9 @@ h2 {
     max-width: $maxWidthContainer + px;
     margin: 0 auto;
     padding: 0 20px;
+    @media (max-width: $md3 + px) {
+
+    }
     @media (max-width: $md4 + px) {
       padding: 0 10px;
     }
@@ -131,13 +134,24 @@ a {
 /********** Main content style ********/
 
 .mainButton {
+    display: inline-block;
     color: #ffffff;
     background: linear-gradient(270deg, #DFC3B2, #D5B19B);
     font-family: 'Oswald', sans-serif;
     font-weight: 300;
     font-size: 18px;
-    padding: 9px 58px;
+    padding: 8px 58px 11px;
     border-radius: 10px;
+    @media (max-width: $md3 + px) {
+        font-size: 14px;
+        padding: 8px 40px 11px;
+        font-weight: 200;
+        border-radius: 5px;
+    }
+    @media (max-width: $md4 + px) {
+        font-size: 12px;
+        padding: 8px 25px 11px;
+    }
 }
 
 

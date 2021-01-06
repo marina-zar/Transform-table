@@ -1,14 +1,16 @@
 .header {
     background-color: #FAF5F2;
-    margin-bottom: 67px;
+    //margin-bottom: 67px;
     @media (max-width: $md3 + px) {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
+        z-index: 100;
+        background: #fff;
     }
     @media (max-width: $md4 + px) {
-        background-color: #fff;
+
     }
 }
 
@@ -81,7 +83,7 @@
         display: block;
         text-align: center;
         line-height: 106px;
-        padding-right: 40px;
+        padding-right: 80px;
     }
     @media (max-width: $md4 + px) {
         font-size: 10px;
