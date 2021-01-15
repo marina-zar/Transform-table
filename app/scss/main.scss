@@ -2,18 +2,18 @@
 
 //@import "../../node_modules/normalize-scss/sass/_normalize.scss";
 
-/********** Подключение шрифтов ********/
+/******************** Подключение шрифтов *************************/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap&subset=cyrillic-ext');
 @import "fonts";
 
 
-/**********Шрифт по умолчанию********/
+/*************************Шрифт по умолчанию*********************/
 $fontFamily: "Roboto", sans-serif;
 
-/********** BOOTSTRAP ********/
+/************************* BOOTSTRAP **************************/
 // @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-/********** Переменные ********/
+/************************* Переменные ************************/
 $minWidth: 320px;
 $maxWidth: 1920;
 $maxWidthContainer: 1680 + 40;
@@ -21,12 +21,12 @@ $mainColor: #303030;
 $mainBGC: #D5B19B;
 $md0: $maxWidthContainer + 12;
 $md1: 1200;
-$md2: 991.98;
-$md3: 767.98;
-$md4: 479.98;
+$md2: 992;
+$md3: 768;
+$md4: 480;
 $fa-font-path: "../fonts/webfonts";
 
-/********** Обнуление ********/
+/************************* Обнуление **************************/
 
 * {
     padding: 0;
@@ -89,13 +89,19 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
 }
 
-h2 {
+h2.mainTitle {
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
     font-size: 48px;
     line-height: 60px;
+    @media (max-width: $md3 + px) {
+        font-size: 40px;
+    }
+    @media (max-width: $md4 + px) {
+        font-size: 24px;
+    }
 }
-/********** Оболочка ********/
+/********************************* Оболочка **************************/
 
 .wrapper {
     width: 100%;
@@ -105,7 +111,8 @@ h2 {
     flex-direction: column;
 }
 
-/********** Основная сетка ********/
+
+/****************************** Основная сетка *****************************/
 .container {
     max-width: $maxWidthContainer + px;
     margin: 0 auto;
@@ -126,12 +133,12 @@ body {
 a {
     color: $mainColor;
 }
-/********** Подключение файлов стилей, форм ... ********/
+/*************************** Подключение файлов стилей, форм ... ****************/
 
 @import "header";
 @import "home";
 
-/********** Main content style ********/
+/********************************* Main content style *************************/
 
 .mainButton {
     display: inline-block;
@@ -142,6 +149,10 @@ a {
     font-size: 18px;
     padding: 8px 58px 11px;
     border-radius: 10px;
+    transition: all 2s ease;
+    &:hover {
+        background: linear-gradient(270deg, #dfaf8c, #c88f6f);
+    }
     @media (max-width: $md3 + px) {
         font-size: 14px;
         padding: 8px 40px 11px;
@@ -152,9 +163,24 @@ a {
         font-size: 12px;
         padding: 8px 25px 11px;
     }
+   }
+
+.transparentButton {
+    background: transparent;
+    border: .5px solid $mainColor;
+    border-radius: 10px;
+    padding: 8px 60px 10px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    text-align: center;
+    transition: all .4s;
+    &:hover {
+        background: #c2815a;
+        border: 1px solid transparent;
+        color: #fff;
+    }
 }
-
-
 
 
 

@@ -39,6 +39,7 @@ function fonts() {
 
 function scripts() {
     return src('app/js/app.js')
+    .pipe(fileinclude())
     .pipe(concat('app.min.js'))
     .pipe(uglify())
     .pipe(dest('dist/js'))

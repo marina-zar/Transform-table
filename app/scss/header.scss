@@ -83,7 +83,7 @@
         display: block;
         text-align: center;
         line-height: 106px;
-        padding-right: 80px;
+        padding-right: 20%;
     }
     @media (max-width: $md4 + px) {
         font-size: 10px;
@@ -121,6 +121,12 @@
         font-size: 12px;
     }
 }
+.column-menu__list li:last-child {
+    @media (max-width: $md2+ px) {
+        margin-bottom: 0;
+        margin-top: 30px;
+    }
+}
 
 .column-menu__body {
     height: 100%;
@@ -131,9 +137,11 @@
         left: auto;
         padding: 80px 50px 40px;
         height: auto;
+        overflow: auto;
         background: linear-gradient(180deg, #e4cdbf, #D5B19B);
         transform: translateX(100%);
         transition: all .4s;
+        z-index: 5;
     }
     @media (max-width: $md4 + px) {
         padding: 50px 20px 20px;
@@ -142,6 +150,7 @@
 
 .column-menu__body.active {
     transform: translateX(0);
+    z-index: 6;
 }
 
 /**************************Burger menu********/
@@ -155,7 +164,7 @@
         width: 36px;
         height: 24px;
         cursor: pointer;
-        z-index: 5;
+        z-index: 7;
         span {
             transition: all .3s;
             position: absolute;
@@ -216,10 +225,14 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    transition: all .8s;
+    transition: all .7s ease;
     overflow: hidden;
     & * {
         font-weight: 500;
+        @media (max-width: 1340px) {
+            opacity: 0;
+        }
+
     }
     &__timeline {
         padding: 10px 0 10px 33px;
@@ -247,12 +260,6 @@
     }
 }
 
-.body-contacts__phone {
-    @media (max-width: $md2 + px) {
-
-    }
-}
-
 .column-contacts__icon {
     display: none;
     color: #d5b19b;
@@ -262,17 +269,21 @@
         right: 20px;
         top: calc(50% - 14px);
         cursor: pointer;
-        z-index: 5;
+        z-index: 7;
     }
 }
 
 .body-contacts.active {
+    & * {
+        opacity: 1;
+    }
     @media (max-width: 1340px) {
         padding-left: 20px;
         padding-right: 80px;
-        position: fixed;
-        right: 0;
+        position: absolute;
+        right: -20px;
         top: 0;
+        z-index: 6;
         width: 600px;
         height: 106px;
         background-color: #e4cdbf;
