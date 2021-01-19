@@ -89,18 +89,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
 }
 
-h2.mainTitle {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 400;
-    font-size: 48px;
-    line-height: 60px;
-    @media (max-width: $md3 + px) {
-        font-size: 40px;
-    }
-    @media (max-width: $md4 + px) {
-        font-size: 24px;
-    }
-}
 /********************************* Оболочка **************************/
 
 .wrapper {
@@ -139,7 +127,19 @@ a {
 @import "home";
 
 /********************************* Main content style *************************/
-
+h2.mainTitle {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 60px;
+  @media (max-width: $md3 + px) {
+    font-size: 40px;
+  }
+  @media (max-width: $md4 + px) {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
 .mainButton {
     display: inline-block;
     color: #ffffff;
@@ -154,19 +154,17 @@ a {
         background: linear-gradient(270deg, #dfaf8c, #c88f6f);
     }
     @media (max-width: $md3 + px) {
-        font-size: 14px;
         padding: 8px 40px 11px;
         font-weight: 200;
         border-radius: 5px;
     }
     @media (max-width: $md4 + px) {
-        font-size: 12px;
         padding: 8px 25px 11px;
     }
    }
 
-.transparentButton {
-    background: transparent;
+.whiteButton {
+    background: #fff;
     border: .5px solid $mainColor;
     border-radius: 10px;
     padding: 8px 60px 10px;
@@ -177,11 +175,73 @@ a {
     transition: all .4s;
     &:hover {
         background: #c2815a;
-        border: 1px solid transparent;
+        border: .5px solid transparent;
         color: #fff;
     }
 }
 
+/*************************** CalcCost **********************/
+.calcCost {
+  background: url("../img/calcCost/calcCost-bg.png") no-repeat left top, linear-gradient(180deg, #E3CCBD 0%, #D5B19B 100%);
+  //background-size: auto, 100%;
+  margin-bottom: 120px;
+  @media (max-width: $md3 + px) {
+    background-size: 320px auto, 100%;
+  }
+}
+
+.calcCost .container {
+  padding-left: 20%;
+  text-align: center;
+    @media (max-width: $md3 + px) {
+    padding-left: 0;
+  }
+}
+.calcCost__title {
+  display: inline-block;
+  margin-top: 110px;
+  @media (max-width: 1200px) {
+    font-size: 42px;
+  }
+  @media (max-width: $md3 + px) {
+    margin: 100px 30px 0 230px;
+    font-size: 38px;
+  }
+  @media (max-width: $md4 + px) {
+    margin: 225px 30px 0;
+    line-height: 36px;
+
+  }
+}
+.calcCost__text{
+  font-family: 'Oswald', sans-serif;;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  //text-align: center;
+  color: $mainColor;
+  margin-top: 20px;
+  @media (max-width: $md4 + px) {
+    font-size: 14px;
+    margin-top: 0;
+  }
+}
+a.calcCost__btn {
+  display: inline-block;
+  margin: 53px 0 120px 0;
+  padding: 18px 80px 20px;
+  border: .5px solid transparent;
+  &:hover {
+    background: #c2815a;
+    color: #fff;
+  }
+  @media (max-width: $md4 + px) {
+    margin: 21px 0 33px 0;
+    padding: 10px 32px 10px;
+    font-size: 14px;
+  }
+}
 
 
 
