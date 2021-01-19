@@ -208,6 +208,9 @@ h2.products__title {
     margin: 65px -40px 0;
     padding: 0 10px;
   }
+  @media (max-width: 510px) {
+    padding: 0 50px;
+  }
   @media (max-width: $md4 + px) {
     margin: 55px -40px 0;
     padding: 0 10px;
@@ -226,9 +229,10 @@ h2.products__title {
   @media (max-width: $md3 + px) {
     margin: 0 0 80px 0;
   }
-  @media (max-width: $md4 + px) {
+  @media (max-width: 510px) {
     flex: 0 0 100%;
   }
+
   &:nth-child(7),
   &:nth-child(8) {
     @media (max-width: 1367px) {
@@ -347,7 +351,70 @@ h2.products__title {
 //  display: none;
 //}
 
-.products__button {
 
+/*************************** Advantage **********************/
+
+.advantage {
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 42.71%), url("../img/advantage/advan-bg.png") no-repeat center;
+  background-size: auto, cover;
+  text-align: left;
+  padding: 65px 10px 0 50%;
+  margin-bottom: 180px;
+  @media (max-width: $md2 + px) {
+    padding: 65px 10px 0 45%;
+  }
+  @media (max-width: $md3 + px) {
+    padding: 65px 10px 0 10px;
+    background-size: auto, cover;
+  }
+  h2.advantage__title {
+    line-height: 70px;
+    margin-bottom: 55px;
+    @media (max-width: $md2 + px) {
+      font-size: 42px;
+    }
+    @media (max-width: $md3 + px) {
+      display: inline-block;
+      width: 100%;
+    }
+    span {
+      text-transform: uppercase;
+    }
+  }
+  dl.advantage__list.list-adantage {
+    max-width: 465px;
+    padding-bottom: 280px;
+    @media (max-width: $md3 + px) {
+      padding: 0 0 0 40%;
+      max-width: 100%;
+    }
+    dt.list-advantage__title {
+      //padding-left: 42px;
+      position: relative;
+      &::before {
+        content: '';
+        display: block;
+        height: 22px;
+        width: 22px;
+        background-color: $mainBGC;
+        position: absolute;
+        left: -42px;
+        top: calc(50% - 10px);
+      }
+    }
+    dd.list-advantage__desc {
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      margin-bottom: 20px;
+    }
+  }
 }
+.advantage h2 {
+  @media (max-width: $md3 + px) {
+    text-align: center;
+  }
+}
+
 
