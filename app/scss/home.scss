@@ -399,7 +399,7 @@ h2.products__title {
       position: relative;
       &::before {
         content: '';
-        display: block;
+        display: inline-block;
         height: 22px;
         width: 22px;
         background-color: $mainBGC;
