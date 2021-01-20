@@ -195,6 +195,12 @@ a.content-mainSlider__button {
 .page__products {
   margin-bottom: 180px;
   text-align: center;
+  @media (max-width: $md3 + px) {
+    margin-bottom: 150px;
+  }
+  @media (max-width: $md4 + px) {
+    margin-bottom: 90px;
+  }
 }
 h2.products__title {
   display: inline-block;
@@ -231,6 +237,7 @@ h2.products__title {
   }
   @media (max-width: 510px) {
     flex: 0 0 100%;
+    margin: 0 0 55px 0;
   }
 
   &:nth-child(7),
@@ -355,7 +362,7 @@ h2.products__title {
 /*************************** Advantage **********************/
 
 .advantage {
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 42.71%), url("../img/advantage/advan-bg.png") no-repeat center;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 42.71%), url("../img/advantage/advan-bg.png") no-repeat center bottom;
   background-size: auto, cover;
   text-align: left;
   padding: 65px 10px 0 50%;
@@ -365,31 +372,30 @@ h2.products__title {
   }
   @media (max-width: $md3 + px) {
     padding: 65px 10px 0 10px;
-    background-size: auto, cover;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 65%), url("../img/advantage/advan-bg.png") no-repeat 65% bottom;
+    background-size: auto, auto 80%;
   }
-  h2.advantage__title {
-    line-height: 70px;
-    margin-bottom: 55px;
-    @media (max-width: $md2 + px) {
-      font-size: 42px;
-    }
+  @media (max-width: $md4 + px) {
+    padding: 0 10px 0 10px;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 75%) , url("../img/advantage/advan-bg.png") no-repeat 56% bottom;
+    background-size: auto, auto 67%;
+  }
+  h2 {
     @media (max-width: $md3 + px) {
-      display: inline-block;
-      width: 100%;
-    }
-    span {
-      text-transform: uppercase;
+      text-align: center;
     }
   }
   dl.advantage__list.list-adantage {
     max-width: 465px;
     padding-bottom: 280px;
     @media (max-width: $md3 + px) {
-      padding: 0 0 0 40%;
+      padding: 0 0 0 35%;
       max-width: 100%;
+      padding-bottom: 140px;
     }
+
     dt.list-advantage__title {
-      //padding-left: 42px;
+
       position: relative;
       &::before {
         content: '';
@@ -400,6 +406,12 @@ h2.products__title {
         position: absolute;
         left: -42px;
         top: calc(50% - 10px);
+        @media (max-width: $md4 + px) {
+          height: 15px;
+          width: 15px;
+          left: -30px;
+          top: calc(50% - 7px);
+        }
       }
     }
     dd.list-advantage__desc {
@@ -408,13 +420,40 @@ h2.products__title {
       font-size: 16px;
       line-height: 19px;
       margin-bottom: 20px;
+      @media (max-width: $md4 + px) {
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 15px;
+      }
+      dd.list-advantage__desc:last-child{
+        margin-bottom: 130px;
+      }
     }
   }
 }
-.advantage h2 {
+//.advantage h2 {
+//  @media (max-width: $md3 + px) {
+//    text-align: center;
+//  }
+//}
+.advantage__title {
+  line-height: 70px;
+  margin-bottom: 55px;
+  margin-left: -42px;
+  @media (max-width: $md2 + px) {
+    font-size: 42px;
+  }
   @media (max-width: $md3 + px) {
-    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-left: 0;
+  }
+  @media (max-width: $md4 + px) {
+    margin-bottom: 25px;
+
+  }
+  span {
+    text-transform: uppercase;
   }
 }
-
 
