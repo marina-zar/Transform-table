@@ -193,6 +193,13 @@ h2.mainTitle {
     }
 }
 
+.description {
+  font-family: 'Oswald', sans-serif;;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: $mainColor
+}
 /*************************** CalcCost **********************/
 .calcCost {
   background: url("../img/calcCost/calcCost-bg.png") no-repeat left top, linear-gradient(180deg, #E3CCBD 0%, #D5B19B 100%);
