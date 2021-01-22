@@ -374,6 +374,7 @@ h2.products__title {
     padding: 65px 10px 0 10px;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 65%), url("../img/advantage/advan-bg.png") no-repeat 65% bottom;
     background-size: auto, auto 80%;
+    margin-bottom: 75px;
   }
   @media (max-width: $md4 + px) {
     padding: 0 10px 0 10px;
@@ -450,7 +451,6 @@ h2.products__title {
   }
   @media (max-width: $md4 + px) {
     margin-bottom: 25px;
-
   }
   span {
     text-transform: uppercase;
@@ -462,43 +462,83 @@ h2.products__title {
 .page__gallery {
   background: linear-gradient(180deg, rgba(213, 177, 155, 0.64) 0%, #D5B19B 100%);
   padding-top: 140px;
-  margin-bottom: 1880px;
+  margin-bottom: 180px;
   position: relative;
   z-index: -2;
+  @media (max-width: $md1 + px) {
+    padding-top: 70px;
+  }
+  @media (max-width: $md3 + px) {
+    padding-top: 20px;
+  }
 }
 .gallery__body {
   display: flex;
   overflow: hidden;
   padding-bottom: 130px;
+  flex-wrap: wrap;
+  @media (max-width: $md3 + px) {
+    padding-bottom: 80px;
+  }
+  @media (max-width: $md4 + px) {
+    padding-bottom: 50px;
+  }
 }
-.gallery__color.pic-color {
-  flex: 1 1 45%;
-  padding: 0 9% 0 180px;
+.gallery__color {
+  flex: 0 1 45%;
+  padding: 0 7% 0 9%;
+  @media (max-width: $md1 + px) {
+    flex: 1 1 100%;
+    order: 2;
+    text-align: center;
+    padding: 0 5% 0 5%;
+  }
+  @media (max-width: $md4 + px) {
+    flex: 1 1 100%;
+    order: 2;
+    text-align: center;
+    padding: 0 2% 0 2%;
+  }
 }
-h2.pic-color__title.mainTitle {
+//.gallery__color h2,
+//.gallery__color .pic-color__desc {
+//  @media (max-width: $md1 + px) {
+//    text-align: center;
+//  }
+//}
+h2.pic-color__title {
   margin-bottom: 43px;
   line-height: 71px;
 }
 .pic-color__desc {
   margin-bottom: 45px;
+  @media (max-width: $md4 + px){
+    margin-bottom: 25px;
+  }
 }
+
+//*************************на флексах
 .pic-color__list {
   display: flex;
   flex-wrap: wrap;
-  //max-width: 491px;
-  //justify-content: left;
-  //align-content: center;
-}
+  justify-content: safe center;
+ }
 .pic-color__item {
   margin-bottom: 20px;
   margin-right: 20px;
-  box-shadow: inset 0px 0px 0px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   //border: 2px solid rgba(0, 0, 0, 0.2);
   width: 77px;
   height: 77px;
   overflow: hidden;
   display: flex;
+  @media (max-width: $md4 + px) {
+    width: 49px;
+    height: 49px;
+    margin-bottom: 12px;
+    margin-right: 12px;
+  }
     img {
     border-radius: 10px;
     //object-fit: cover;
@@ -510,11 +550,72 @@ h2.pic-color__title.mainTitle {
   }
 }
 
+//*************************на гридах start
+//.pic-color__list {
+//  display: grid;
+//  grid-template-columns: repeat(5, 77px);
+//  grid-gap: 20px;
+//}
+//.pic-color__item {
+//  box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0.1);
+//  border-radius: 10px;
+//  width: 77px;
+//  height: 77px;
+//  overflow: hidden;
+//  display: flex;
+//  img {
+//    border-radius: 10px;
+//    //object-fit: cover;
+//    width: 108%;
+//    height: auto;
+//    position: relative;
+//    z-index: -1;
+//    margin: -4px;
+//  }
+//}
+//*************************на гридах the end
+
+
 .gallery__picture.pic-gallery {
   flex: 1 1 55%;
-  img.pic-gallery-img {}
-}
+  position: relative;
+  display: flex;
+  padding-top: 70px;
+  @media (max-width: $md1 + px) {
+    flex: 1 1 100%;
+    order: 1;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: 100px;
+  }
+  @media (max-width: $md3 + px) {
+    padding-top: 40px;
+    margin-bottom: 50px;
+  }
+  //overflow: hidden;
+  .pic-gallery-img {
+    position: relative;
+    z-index: 2;
 
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .pic-gallery-img:nth-child(2){
+    transform: rotate(15deg);
+    z-index: 1;
+    margin-left: -12%;
+  }
+  .pic-gallery-img:nth-child(3){
+    transform: rotate(-15deg);
+    margin-left: -10%;
+    margin-top: 20px;
+    @media (max-width: $md3 + px) {
+      margin-top: 10px;
+    }
+  }
+}
 
 
 
