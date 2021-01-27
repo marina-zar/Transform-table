@@ -521,14 +521,25 @@ h2.pic-color__title {
 .pic-color__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: safe center;
+  justify-content: flex-start;
+  @media (max-width: $md1 + px) {
+    justify-content: center;
+    padding-left: 20px;
+  }
+  @media (max-width: $md4 + px) {
+    justify-content: center;
+    padding-left: 12px;
+  }
+  @media (max-width: 330px) {
+    justify-content: center;
+    padding-left: 2px;
+  }
  }
 .pic-color__item {
   margin-bottom: 20px;
   margin-right: 20px;
   box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  //border: 2px solid rgba(0, 0, 0, 0.2);
   width: 77px;
   height: 77px;
   overflow: hidden;
@@ -617,5 +628,78 @@ h2.pic-color__title {
   }
 }
 
+/*************************** Review **********************/
 
+.page__review {
+  margin-bottom: 180px;
+  text-align: center;
+}
+.review-slider__container{}
+h2.review-slider__title {
+  margin-bottom: 109px;
+}
+.review-slider__body {
+  margin-bottom: 85px;
+}
+.review-slider__list {
+  display: flex;
+  margin-right: 7%;
+  margin-left: 7%;
+  @media (max-width: $md1 + px) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+.review-slider__item {
+  flex: 1;
+  margin: 0 50px;
+}
+
+figure {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+  div {
+    border: 4px solid $mainBGC;
+    border-radius: 100%;
+    flex: 0 0 182px;
+    height: 182px;
+    overflow: hidden;
+    margin-right: 14%;
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    //border-radius: 50%;
+  }
+}
+a.item-user__link {
+  h3.item-user__name {}
+}
+p.item-user__text {
+  text-align: left;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: $mainColor;
+}
+
+.review-slider__arrows {
+  width: 131px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.review-slider__arrow {
+  width: 58px;
+  height: 58px;
+  cursor: pointer;
+}
+.review-slider__arrow-prev {
+  background: url("../img/review/prev.png") no-repeat center;
+}
+.review-slider__arrow-next {
+  background: url("../img/review/next.png") no-repeat center;
+}
 
