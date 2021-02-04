@@ -634,48 +634,45 @@ h2.pic-color__title {
   margin-bottom: 180px;
   text-align: center;
 }
-.review-slider__container{}
+.swiper-container {
+  width: 70%;
+  margin-bottom: 180px;
+}
+.review-slider__wrapper{
+  margin-bottom: 100px;
+}
 h2.review-slider__title {
   margin-bottom: 109px;
-}
-.review-slider__body {
-  margin-bottom: 85px;
-}
-.review-slider__list {
-  display: flex;
-  margin-right: 7%;
-  margin-left: 7%;
-  @media (max-width: $md1 + px) {
-    margin-right: 0;
-    margin-left: 0;
   }
-}
-.review-slider__item {
-  flex: 1;
-  margin: 0 50px;
-}
 
-figure {
+.item-user__foto {
   display: flex;
   align-items: center;
   margin-bottom: 32px;
   div {
     border: 4px solid $mainBGC;
-    border-radius: 100%;
+    border-radius: 70% 35% 65% 46%;
     flex: 0 0 182px;
     height: 182px;
     overflow: hidden;
-    margin-right: 14%;
+    //margin-right: 14%;
+    transform: rotate(-20deg);
   }
   img {
     display: block;
-    width: 100%;
+    width: 115%;
     height: auto;
-    //border-radius: 50%;
+    transform: rotate(20deg);
+    margin-top: -10px;
+    margin-left: -10px;
   }
 }
 a.item-user__link {
-  h3.item-user__name {}
+  h3.item-user__name {
+    flex: 1 1 auto;
+    text-align: right;
+    padding-right: 15px;
+  }
 }
 p.item-user__text {
   text-align: left;
@@ -687,19 +684,39 @@ p.item-user__text {
 
 .review-slider__arrows {
   width: 131px;
+  height: 58px;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+
+  .review-slider__arrow {
+    width: 58px;
+    height: 58px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    background: $mainBGC;
+    color: #fff;
+    font-size: 50px;
+    line-height: 46px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200;
+    position: static;
+  }
+
+  div.review-slider__arrow-prev.swiper-button-prev {
+    clip-path: inset(0 0 round 70% 35% 65% 45%);
+    &:after {
+      font-size: 20px;
+    }
+  }
+
+  div.review-slider__arrow-next.swiper-button-next {
+    clip-path: inset(0 0 round 35% 70% 45% 65%);
+    &:after {
+      font-size: 20px;
+    }
+  }
 }
-.review-slider__arrow {
-  width: 58px;
-  height: 58px;
-  cursor: pointer;
-}
-.review-slider__arrow-prev {
-  background: url("../img/review/prev.png") no-repeat center;
-}
-.review-slider__arrow-next {
-  background: url("../img/review/next.png") no-repeat center;
-}
+
+
 

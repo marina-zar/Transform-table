@@ -86,7 +86,7 @@ exports.styles      = styles;
 exports.images      = images;
 exports.cleanimg    = cleanimg;
 
-let build = series(cleandist, html, fonts, styles, scripts, images);
+let build = series(cleandist, html, fonts, styles, images, scripts);
 exports.build = build;
 
 exports.default     = parallel(build, browsersync, startwatch);
