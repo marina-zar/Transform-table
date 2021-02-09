@@ -301,6 +301,16 @@ a.calcCost__btn {
   @media (max-width: $md3 + px) {
     margin-bottom: 100px;
   }
+  .items-products__column{
+    &:last-child {
+      @media (max-width: 1400px){
+        display: none;
+      }
+      @media (max-width: $md2 + px){
+        display: block;
+      }
+    }
+  }
 }
 
 

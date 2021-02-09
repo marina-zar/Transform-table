@@ -22,7 +22,7 @@ iconContacts.addEventListener('click', function() {
 /*******************Slider*************************/
 const mySwiper = new Swiper('.swiper-container', {
     // Optional parameters
-    spaceBetween: 130,
+    spaceBetween: 100,
     slidesPerView: 3,
     loop: true,
 
@@ -31,4 +31,28 @@ const mySwiper = new Swiper('.swiper-container', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+    breakpoints: {
+        '280': {
+            slidesPerView: 1,
+            spaceBetween: 10,
+        },
+        '550': {
+            slidesPerView: 2,
+            spaceBetween: 30,
+        },
+        '767': {
+            slidesPerView: 2,
+            spaceBetween: 30,
+        },
+        '992': {
+            slidesPerView: 3,
+            spaceBetween: 60,
+        },
+        '1200': {
+            spaceBetween: 80,
+        },
+        '1600': {
+            spaceBetween: 130,
+        },
+    }
 });

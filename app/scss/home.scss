@@ -432,11 +432,7 @@ h2.products__title {
     }
   }
 }
-//.advantage h2 {
-//  @media (max-width: $md3 + px) {
-//    text-align: center;
-//  }
-//}
+
 .advantage__title {
   line-height: 70px;
   margin-bottom: 55px;
@@ -470,6 +466,7 @@ h2.products__title {
   }
   @media (max-width: $md3 + px) {
     padding-top: 20px;
+    margin-bottom: 100px;
   }
 }
 .gallery__body {
@@ -500,12 +497,6 @@ h2.products__title {
     padding: 0 2% 0 2%;
   }
 }
-//.gallery__color h2,
-//.gallery__color .pic-color__desc {
-//  @media (max-width: $md1 + px) {
-//    text-align: center;
-//  }
-//}
 h2.pic-color__title {
   margin-bottom: 43px;
   line-height: 71px;
@@ -516,8 +507,6 @@ h2.pic-color__title {
     margin-bottom: 25px;
   }
 }
-
-//*************************на флексах
 .pic-color__list {
   display: flex;
   flex-wrap: wrap;
@@ -552,7 +541,6 @@ h2.pic-color__title {
   }
     img {
     border-radius: 10px;
-    //object-fit: cover;
     width: 108%;
     height: auto;
     position: relative;
@@ -560,33 +548,6 @@ h2.pic-color__title {
     margin: -4px;
   }
 }
-
-//*************************на гридах start
-//.pic-color__list {
-//  display: grid;
-//  grid-template-columns: repeat(5, 77px);
-//  grid-gap: 20px;
-//}
-//.pic-color__item {
-//  box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0.1);
-//  border-radius: 10px;
-//  width: 77px;
-//  height: 77px;
-//  overflow: hidden;
-//  display: flex;
-//  img {
-//    border-radius: 10px;
-//    //object-fit: cover;
-//    width: 108%;
-//    height: auto;
-//    position: relative;
-//    z-index: -1;
-//    margin: -4px;
-//  }
-//}
-//*************************на гридах the end
-
-
 .gallery__picture.pic-gallery {
   flex: 1 1 55%;
   position: relative;
@@ -603,11 +564,9 @@ h2.pic-color__title {
     padding-top: 40px;
     margin-bottom: 50px;
   }
-  //overflow: hidden;
   .pic-gallery-img {
     position: relative;
     z-index: 2;
-
     img {
       width: 100%;
       height: auto;
@@ -628,22 +587,40 @@ h2.pic-color__title {
   }
 }
 
+
+
+
 /*************************** Review **********************/
 
 .page__review {
   margin-bottom: 180px;
   text-align: center;
+  @media (max-width: $md2 + px){
+    margin-bottom: 140px;
+  }
+  @media (max-width: $md3 + px){
+    margin-bottom: 100px;
+  }
 }
 .swiper-container {
   width: 70%;
-  margin-bottom: 180px;
+  //margin-bottom: 180px;
+  @media (max-width: $md1 + px) {
+    width: 85%;
+  }
 }
 .review-slider__wrapper{
   margin-bottom: 100px;
+  @media (max-width: $md3 + px) {
+    margin-bottom: 65px;
+  }
 }
 h2.review-slider__title {
   margin-bottom: 109px;
+  @media (max-width: $md3 + px){
+    margin-bottom: 65px;
   }
+}
 
 .item-user__foto {
   display: flex;
@@ -657,6 +634,10 @@ h2.review-slider__title {
     overflow: hidden;
     //margin-right: 14%;
     transform: rotate(-20deg);
+    @media (max-width: $md3 + px) {
+      flex: 0 0 155px;
+      height: 155px;
+    }
   }
   img {
     display: block;
@@ -672,6 +653,9 @@ a.item-user__link {
     flex: 1 1 auto;
     text-align: right;
     padding-right: 15px;
+    @media (max-width: 550px) {
+      text-align: center;
+    }
   }
 }
 p.item-user__text {
@@ -688,6 +672,10 @@ p.item-user__text {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+  @media (max-width: $md4 + px) {
+    width: 106px;
+    height: 45px;
+  }
 
   .review-slider__arrow {
     width: 58px;
@@ -701,6 +689,10 @@ p.item-user__text {
     font-family: 'Oswald', sans-serif;
     font-weight: 200;
     position: static;
+    @media (max-width: $md4 + px) {
+      width: 45px;
+      height: 45px;
+    }
   }
 
   div.review-slider__arrow-prev.swiper-button-prev {
@@ -717,6 +709,147 @@ p.item-user__text {
     }
   }
 }
+
+/*************************** About **********************/
+
+.page__about {
+  background: linear-gradient(180deg, rgba(213, 177, 155, 0) 0%, rgba(213, 177, 155, 0.44) 100%);
+  text-align: center;
+}
+h2.about-company__title.mainTitle {
+  margin-bottom: 25px;
+  @media (max-width: $md3 + px) {
+    margin-bottom: 15px;
+  }
+}
+.about-company__logo {
+  display: inline-block;
+  width: 217px;
+  height: 56px;
+  @media (max-width: $md4 + px) {
+    width: 163px;
+    height: 42px;
+  }
+  img {
+    width: 100%;
+    height: auto;
+      }
+}
+.about-company__body {
+  display: flex;
+  padding: 0 0 0 14%;
+  text-align: left;
+  @media (max-width: 1300px){
+    padding: 0 0 0 7%;
+  }
+  @media (max-width: $md2 + px){
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  .about-company__text {
+    flex: 1 1 55%;
+    padding: 85px 50px 0 0;
+    font-size: 16px;
+    line-height: 19px;
+    @media (max-width: $md2 + px){
+      padding: 0 0 0 7%;
+      flex: 1 1 100%;
+      margin: 45px 0 40px 0;
+    }
+    @media (max-width: $md3 + px){
+      margin-bottom: 50px;
+    }
+    @media (max-width: $md4 + px){
+      padding: 0;
+      font-size: 14px;
+      line-height: 17px;
+      margin-bottom: 40px;
+    }
+    p {
+      @media (max-width: $md4 + px) {
+        margin: 0 0 20px 17px;
+      }
+    }
+    .about-company__btns {
+      margin-top: 40px;
+      display: flex;
+      align-items: flex-end;
+      @media (max-width: $md4 + px) {
+        justify-content: center;
+      }
+
+      a.about-company__calcBtn.mainButton{
+        margin-right: 5px;
+        display: inline;
+        @media (max-width: $md1 + px){
+          font-size: 14px;
+          padding: 8px 38px 11px;
+        }
+        @media (max-width: $md4 + px){
+          font-size: 12px;
+          padding: 6px 25px 9px;
+          border-radius: 5px;
+          margin-right: 10px;
+        }
+      }
+      a.about-company__catalogBtn.mainButton{
+        display: inline;
+        background: #fff;
+        color: $mainColor;
+        @media (max-width: $md1 + px){
+          font-size: 14px;
+          padding: 8px 38px 11px;
+        }
+        @media (max-width: $md4 + px){
+          font-size: 12px;
+          padding: 6px 25px 9px;
+          border-radius: 5px;
+        }
+        &:after {
+          content: '>';
+          padding-left: 25px;
+          font-size: 30px;
+          vertical-align: bottom;
+          line-height: 20px;
+          transition: all .4s ease-in-out;
+          @media (max-width: $md1 + px){
+            padding-left: 15px;
+            font-size: 28px;
+          }
+          @media (max-width: $md4 + px){
+            padding-left: 8px;
+            font-size: 26px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+  a.about-company__catalogBtn:hover::after {
+   transform: rotate(15deg);
+    color: red;
+  }
+  .about-company__img {
+    flex: 1 1 45%;
+    display: flex;
+    @media (max-width: $md2 + px) {
+      flex: 1 1 100%;
+          }
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: auto 0 0 0;
+      @media (max-width: $md2 + px) {
+        width: 105%;
+        margin-left: -3%;
+      }
+
+    }
+  }
+}
+
+
 
 
 
