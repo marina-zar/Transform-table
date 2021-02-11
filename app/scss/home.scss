@@ -590,142 +590,33 @@ h2.pic-color__title {
 
 
 
-/*************************** Review **********************/
 
-.page__review {
-  margin-bottom: 180px;
-  text-align: center;
-  @media (max-width: $md2 + px){
-    margin-bottom: 140px;
-  }
-  @media (max-width: $md3 + px){
-    margin-bottom: 100px;
-  }
-}
-.swiper-container {
-  width: 70%;
-  //margin-bottom: 180px;
-  @media (max-width: $md1 + px) {
-    width: 85%;
-  }
-}
-.review-slider__wrapper{
-  margin-bottom: 100px;
-  @media (max-width: $md3 + px) {
-    margin-bottom: 65px;
-  }
-}
-h2.review-slider__title {
-  margin-bottom: 109px;
-  @media (max-width: $md3 + px){
-    margin-bottom: 65px;
-  }
-}
-
-.item-user__foto {
-  display: flex;
-  align-items: center;
-  margin-bottom: 32px;
-  div {
-    border: 4px solid $mainBGC;
-    border-radius: 70% 35% 65% 46%;
-    flex: 0 0 182px;
-    height: 182px;
-    overflow: hidden;
-    //margin-right: 14%;
-    transform: rotate(-20deg);
-    @media (max-width: $md3 + px) {
-      flex: 0 0 155px;
-      height: 155px;
-    }
-  }
-  img {
-    display: block;
-    width: 115%;
-    height: auto;
-    transform: rotate(20deg);
-    margin-top: -10px;
-    margin-left: -10px;
-  }
-}
-a.item-user__link {
-  h3.item-user__name {
-    flex: 1 1 auto;
-    text-align: right;
-    padding-right: 15px;
-    @media (max-width: 550px) {
-      text-align: center;
-    }
-  }
-}
-p.item-user__text {
-  text-align: left;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 19px;
-  color: $mainColor;
-}
-
-.review-slider__arrows {
-  width: 131px;
-  height: 58px;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  @media (max-width: $md4 + px) {
-    width: 106px;
-    height: 45px;
-  }
-
-  .review-slider__arrow {
-    width: 58px;
-    height: 58px;
-    cursor: pointer;
-    transition: all 0.4s ease-in-out;
-    background: $mainBGC;
-    color: #fff;
-    font-size: 50px;
-    line-height: 46px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 200;
-    position: static;
-    @media (max-width: $md4 + px) {
-      width: 45px;
-      height: 45px;
-    }
-  }
-
-  div.review-slider__arrow-prev.swiper-button-prev {
-    clip-path: inset(0 0 round 70% 35% 65% 45%);
-    &:after {
-      font-size: 20px;
-    }
-  }
-
-  div.review-slider__arrow-next.swiper-button-next {
-    clip-path: inset(0 0 round 35% 70% 45% 65%);
-    &:after {
-      font-size: 20px;
-    }
-  }
-}
 
 /*************************** About **********************/
 
 .page__about {
-  background: linear-gradient(180deg, rgba(213, 177, 155, 0) 0%, rgba(213, 177, 155, 0.44) 100%);
+  background: linear-gradient(180deg, #FAF5F2, #EDDED5);
   text-align: center;
+  @media (max-width: $md3 + px) {
+    background: linear-gradient(180deg, #fff, #EDDED5);
+  }
 }
 h2.about-company__title.mainTitle {
   margin-bottom: 25px;
+  padding-top: 80px;
   @media (max-width: $md3 + px) {
     margin-bottom: 15px;
+    //margin-top: 80px;
   }
+
 }
 .about-company__logo {
   display: inline-block;
   width: 217px;
   height: 56px;
+  @media (max-width: $md2 + px) {
+    margin-bottom: 40px;
+  }
   @media (max-width: $md4 + px) {
     width: 163px;
     height: 42px;
@@ -747,25 +638,23 @@ h2.about-company__title.mainTitle {
     padding: 0;
   }
   .about-company__text {
-    flex: 1 1 55%;
+    flex: 1 1 50%;
     padding: 85px 50px 0 0;
     font-size: 16px;
     line-height: 19px;
     @media (max-width: $md2 + px){
       padding: 0 0 0 7%;
       flex: 1 1 100%;
-      margin: 45px 0 40px 0;
-    }
-    @media (max-width: $md3 + px){
-      margin-bottom: 50px;
+      margin: 0;
     }
     @media (max-width: $md4 + px){
       padding: 0;
       font-size: 14px;
       line-height: 17px;
-      margin-bottom: 40px;
+      margin-bottom: 0;
     }
     p {
+      margin-bottom: 20px;
       @media (max-width: $md4 + px) {
         margin: 0 0 20px 17px;
       }
@@ -774,6 +663,10 @@ h2.about-company__title.mainTitle {
       margin-top: 40px;
       display: flex;
       align-items: flex-end;
+      padding-bottom: 140px;
+      @media (max-width: $md2 + px) {
+        padding-bottom: 40px;
+      }
       @media (max-width: $md4 + px) {
         justify-content: center;
       }
@@ -781,6 +674,9 @@ h2.about-company__title.mainTitle {
       a.about-company__calcBtn.mainButton{
         margin-right: 5px;
         display: inline;
+        padding: 12px 58px 14px;
+        white-space: nowrap;
+        font-weight: 300;
         @media (max-width: $md1 + px){
           font-size: 14px;
           padding: 8px 38px 11px;
@@ -796,6 +692,8 @@ h2.about-company__title.mainTitle {
         display: inline;
         background: #fff;
         color: $mainColor;
+        padding: 12px 58px 14px;
+        white-space: nowrap;
         @media (max-width: $md1 + px){
           font-size: 14px;
           padding: 8px 38px 11px;
@@ -830,7 +728,7 @@ h2.about-company__title.mainTitle {
     color: red;
   }
   .about-company__img {
-    flex: 1 1 45%;
+    flex: 1 1 50%;
     display: flex;
     @media (max-width: $md2 + px) {
       flex: 1 1 100%;

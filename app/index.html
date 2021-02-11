@@ -273,66 +273,7 @@
                     </div>
                 </div>
 
-                <div class="page__review review-slider">
-                    <div class="review-slider__container swiper-container">
-                        <h2 class="review-slider__title mainTitle">Отзывы покупателей</h2>
-                        <div class="review-slider__wrapper swiper-wrapper">
-
-                            <div class="review-slider__slide item-user swiper-slide">
-                                <a href="#" class="item-user__link">
-                                    <div class="item-user__foto">
-                                        <div><img src="img/review/foto1.jpg" class="item-user__foto" alt="foto1"/></div>
-                                        <h3 class="item-user__name smallTitle">Макпал</h3>
-                                    </div>
-                                    <p class="item-user__text">Спасибо вам) Стол отлично поместился в нашей
-                                        однушке. Очень радует что место свободно обычно, но когда надо мы можем
-                                        сделать стол больше для родственников.</p>
-                                </a>
-                            </div>
-
-                            <div class="review-slider__slide item-user swiper-slide">
-                                <a href="#" class="item-user__link">
-                                    <div class="item-user__foto">
-                                        <div><img src="img/review/foto2.jpg" class="item-user__foto" alt="foto2"/></div>
-                                        <h3 class="item-user__name smallTitle">Сергей</h3>
-                                    </div>
-                                    <p class="item-user__text">Отличный стол. Приобрели пару дней назад. Довольны.
-                                        Стол сделан аккуратно, достаточно легко и быстро получилось увеличить
-                                        размер стола. Буду советовать друзьям. </p>
-                                </a>
-                            </div>
-
-                            <div class="review-slider__slide item-user swiper-slide">
-                                <a href="#" class="item-user__link">
-                                    <div class="item-user__foto">
-                                        <div><img src="img/review/foto3.jpg" class="item-user__foto" alt="foto3"/></div>
-                                        <h3 class="item-user__name smallTitle">Эльмира</h3>
-                                    </div>
-                                    <p class="item-user__text">Спасибо вам) Стол отлично поместился в нашей однушке.
-                                        Очень радует что место свободно обычно,
-                                        но когда надо мы можем сделать стол больше для родственников.</p>
-                                </a>
-                            </div>
-
-                            <div class="review-slider__slide item-user swiper-slide">
-                                <a href="#" class="item-user__link">
-                                    <div class="item-user__foto">
-                                        <div><img src="img/review/foto1.jpg" class="item-user__foto" alt="foto4"/></div>
-                                        <h3 class="item-user__name smallTitle">Макпал</h3>
-                                    </div>
-                                    <p class="item-user__text">Отличный стол. Приобрели пару дней назад. Довольны.
-                                        Стол сделан аккуратно, достаточно легко и быстро получилось увеличить размер
-                                        стола. Буду советовать друзьям. </p>
-                                </a>
-                            </div>
-
-                        </div>
-                        <div class="review-slider__arrows">
-                            <div class="review-slider__arrow review-slider__arrow-prev swiper-button-prev"></div>
-                            <div class="review-slider__arrow review-slider__arrow-next swiper-button-next"></div>
-                        </div>
-                    </div>
-                </div>
+                @@include('review.html')
 
                 <div class="page__container container">
                     <div class="page__about about-company">
@@ -343,7 +284,7 @@
                         <div class="about-company__body">
                             <div class="about-company__text">
                                 <p>Transformer Table - казахстанский производитель
-                                корпусной мебели. Мебель нашего производства отличается стилем и удобством,
+                                корпусной мебели. <br>Мебель нашего производства отличается стилем и удобством,
                                 которые придают помещению неповторимую атмосферу.</p>
                                 <p>У нас вы можете преобрести как готовую мебель, так и заказать индивидуально.</p>
                                 <p>Добро пожаловать!</p>
@@ -357,7 +298,11 @@
                             </div>
                         </div>
                     </div>
+                    @@include('upBtn.html')
+
                 </div>
+                @@include('footer.html')
+                @@include('popup.html')
             </main>
         </div>
         <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>

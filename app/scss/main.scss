@@ -126,6 +126,8 @@ a {
 
 @import "header";
 @import "home";
+@import "footer";
+@import "popup";
 
 /********************************* Main content style *************************/
 h2.mainTitle {
@@ -194,6 +196,28 @@ h2.mainTitle {
     }
 }
 
+._callback {
+  padding: 6px 35px;
+  flex-basis: 195px;
+  background-color: $mainBGC;
+  color: #fff;
+  border-radius: 10px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+  transition: all .3s;
+  @media (max-width: $md4 + px){
+    font-size: 12px;
+    padding: 6px 45px;
+
+  }
+  &:hover {
+    background-color: #c2815a;
+  }
+}
+
 .description {
   font-family: 'Oswald', sans-serif;;
   font-weight: 400;
@@ -252,13 +276,10 @@ h2.calcCost__title {
   font-weight: 400;
   font-size: 24px;
   line-height: 36px;
-  //text-align: center;
   color: $mainColor;
   margin-top: 20px;
   @media (max-width: $md3 + px) {
     margin: 40px 20px 0 230px;
-    //padding: 10px 32px 10px;
-    //font-size: 14px;
   }
   @media (max-width: 620px) {
     margin: 20px 20px 0 210px;
@@ -280,8 +301,6 @@ a.calcCost__btn {
   }
   @media (max-width: $md3 + px) {
     margin: 53px 20px 70px 230px;;
-    //padding: 10px 32px 10px;
-    //font-size: 14px;
   }
   @media (max-width: 620px) {
     margin: 30px 20px 70px 210px;
@@ -314,8 +333,159 @@ a.calcCost__btn {
 }
 
 
+/*************************** Review **********************/
 
+.page__review {
+  margin-bottom: 180px;
+  text-align: center;
+  @media (max-width: $md2 + px){
+    margin-bottom: 140px;
+  }
+  @media (max-width: $md3 + px){
+    margin-bottom: 20px;
+  }
+}
+.swiper-container {
+  width: 70%;
+  //margin-bottom: 180px;
+  @media (max-width: $md1 + px) {
+    width: 85%;
+  }
+}
+.review-slider__wrapper{
+  margin-bottom: 100px;
+  @media (max-width: $md3 + px) {
+    margin-bottom: 65px;
+  }
+}
+h2.review-slider__title {
+  margin-bottom: 109px;
+  @media (max-width: $md3 + px){
+    margin-bottom: 65px;
+  }
+}
 
+.item-user__foto {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+  div {
+    border: 4px solid $mainBGC;
+    border-radius: 70% 35% 65% 46%;
+    flex: 0 0 182px;
+    height: 182px;
+    overflow: hidden;
+    //margin-right: 14%;
+    transform: rotate(-20deg);
+    @media (max-width: $md3 + px) {
+      flex: 0 0 155px;
+      height: 155px;
+    }
+  }
+  img {
+    display: block;
+    width: 115%;
+    height: auto;
+    transform: rotate(20deg);
+    margin-top: -10px;
+    margin-left: -10px;
+  }
+}
+a.item-user__link {
+  h3.item-user__name {
+    flex: 1 1 auto;
+    text-align: right;
+    padding-right: 15px;
+    @media (max-width: 550px) {
+      text-align: center;
+    }
+  }
+}
+p.item-user__text {
+  text-align: left;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: $mainColor;
+}
 
+.review-slider__arrows {
+  width: 131px;
+  height: 58px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  @media (max-width: $md4 + px) {
+    width: 106px;
+    height: 45px;
+  }
+
+  .review-slider__arrow {
+    width: 58px;
+    height: 58px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    background: $mainBGC;
+    color: #fff;
+    font-size: 50px;
+    line-height: 46px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200;
+    position: static;
+    @media (max-width: $md4 + px) {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  div.review-slider__arrow-prev.swiper-button-prev {
+    clip-path: inset(0 0 round 70% 35% 65% 45%);
+    &:after {
+      font-size: 20px;
+    }
+  }
+
+  div.review-slider__arrow-next.swiper-button-next {
+    clip-path: inset(0 0 round 35% 70% 45% 65%);
+    &:after {
+      font-size: 20px;
+    }
+  }
+}
+
+/*************************** Up Button **********************/
+.page__upBtn {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+  @media (max-width: $md3 + px) {
+    padding: 30px 0;
+  }
+  @media (max-width: $md4 + px) {
+    display: none;
+  }
+}
+.upBtn {
+  width: 119px;
+  height: 119px;
+  border-radius: 40% 70% 45% 60%;
+  border: 1px solid $mainColor;
+  display: block;
+  line-height: 135px;
+  text-align: center;
+  background: url("../img/upBtn/Vector.png") no-repeat top 38% center;
+  font-weight: 500;
+  font-size: 18px;
+  transition: all .4s ease-in-out;
+  @media (max-width: $md3 + px) {
+    width: 80px;
+    height: 80px;
+    font-size: 14px;
+    line-height: 100px;
+  }
+  &:hover {
+    background: url("../img/upBtn/Vector.png") no-repeat top 27% center;
+  }
+  }
 
 

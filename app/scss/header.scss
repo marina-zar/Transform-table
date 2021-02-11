@@ -9,10 +9,7 @@
         z-index: 100;
         background: #fff;
     }
-    @media (max-width: $md4 + px) {
-
-    }
-}
+  }
 
 .header__content {
     display: flex;
@@ -239,22 +236,7 @@
         background: url("../img/icon/clock.png") no-repeat left center;
         white-space: nowrap;
     }
-    &__callback {
-        padding: 6px 25px;
-        flex-basis: 195px;
-        background-color: $mainBGC;
-        color: #fff;
-        border-radius: 10px;
-        font-family: 'Oswald', sans-serif;
-        font-weight: 200;
-        font-size: 18px;
-        line-height: 27px;
-        text-align: center;
-        transition: all .3s;
-        &:hover {
-            background-color: #c2815a;
-        }
-    }
+
     @media (max-width: 1340px) {
         transform: translateX(999px);
     }
