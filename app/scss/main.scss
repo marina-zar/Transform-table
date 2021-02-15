@@ -119,6 +119,10 @@ body {
     color: $mainColor;
 }
 
+body.lock {
+  overflow: hidden;
+}
+
 a {
     color: $mainColor;
 }
@@ -158,7 +162,7 @@ h2.mainTitle {
 }
 .mainButton {
     display: inline-block;
-    color: #ffffff;
+    color: #fff;
     background: linear-gradient(270deg, #DFC3B2, #D5B19B);
     font-family: 'Oswald', sans-serif;
     font-weight: 300;

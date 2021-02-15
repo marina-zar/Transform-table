@@ -1,27 +1,50 @@
+/*****************************policity***************/
 .popup {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
     top: 0;
     left: 0;
     z-index: 10;
     opacity: 0;
     visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all .8s ease;
 }
-.popup__body {
+.popup__policity:target {
+    opacity: 1;
+    visibility: visible;
+}
+.popup__policity:target .policity-popup__content {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+.policity-popup__body {
     min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px 10px;
+    padding: 60px 10px;
+    @media (max-width: $md3 + px){
+        padding: 130px 10px;
+    }
 }
-.popup__content {
+.policity-popup__content {
     width: 60%;
+    max-width: 1130px;
+    min-width: 300px;
     background: #fff;
     color: $mainColor;
     padding: 40px 60px;
     position: relative;
+    opacity: 0;
+    transform: translate(0, -110%);
+    transition: all .8s ease;
+    @media (max-width: $md4 + px) {
+        padding: 70px 10px 40px;
+    }
 }
 a.popup__close {
     position: absolute;
@@ -29,9 +52,11 @@ a.popup__close {
     top: 20px;
     font-size: 46px;
     font-family: sans-serif;
-
+    @media (max-width: $md4 + px) {
+        font-size: 36px;
+    }
 }
-.popup__title {
+.policity-popup__title {
     font-family: 'Oswald', sans-serif;
     font-weight: normal;
     font-size: 36px;
@@ -40,18 +65,151 @@ a.popup__close {
     color: $mainBGC;
     text-align: center;
     margin-bottom: 40px;
+    @media (max-width: $md3 + px) {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    @media (max-width: $md4 + px) {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 30px;
+    }
+
 }
-.popup__text {
+.policity-popup__text {
     font-size: 16px;
     line-height: 19px;
+    @media (max-width: $md4 + px) {
+        font-size: 14px;
+    }
     p {
         margin-bottom: 20px;
     }
     span {
         color: $mainBGC;
-        font-weight: bold;
+        font-weight: 500;
     }
 }
+
+/*****************************callBack***************/
+
+.popup__callBack.open {
+    opacity: 1;
+    visibility: visible;
+}
+.popup__callBack.open .callBack-popup__content {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+.callBack-popup__body {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 10px;
+}
+.callBack-popup__content {
+    width: 41%;
+    max-width: 782px;
+    min-width: 300px;
+    background: linear-gradient(276.49deg, #ECDBD1 1.05%, #D5B19B 97.71%);
+    color: $mainColor;
+    position: relative;
+    padding: 110px 8% 44px;
+    text-align: center;
+    opacity: 0;
+    transform: translate(0, -110%);
+    transition: all .8s ease;
+    @media (max-width: 1250px) {
+        width: 50%;
+    }
+    @media (max-width: $md1 + px) {
+    width: 60%;
+    }
+    @media (max-width: $md2 + px) {
+        width: 70%;
+    }
+    @media (max-width: $md3 + px) {
+        width: 80%;
+        padding: 70px 10% 44px;
+    }
+    @media (max-width: $md4 + px) {
+        width: 90%;
+    }
+}
+
+.callBack-popup__title.mainTitle {
+    text-align: center;
+    margin-bottom: 60px;
+    line-height: 71px;
+    @media (max-width: 1480px) {
+        font-size: 40px;
+        line-height: 60px;
+        margin-bottom: 50px;
+    }
+    @media (max-width: $md2 + px) {
+        font-size: 36px;
+        line-height: 50px;
+    }
+    @media (max-width: $md3 + px) {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    @media (max-width: $md4 + px) {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+.callBack-popup__inputs {
+    input {
+        background: #fff;
+        border-radius: 10px;
+        width: 306px;
+        height: 56px;
+        border: 0;
+        font-family: 'Oswald', sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+        color: #000;
+        padding-left: 35px;
+        margin-bottom: 66px;
+        @media (max-width: $md2 + px) {
+            width: 250px;
+            height: 48px;
+            margin-bottom: 45px;
+        }
+        @media (max-width: $md3 + px) {
+            font-size: 14px;
+        }
+        @media (max-width: $md4 + px) {
+            width: 210px;
+            height: 40px;
+            margin-bottom: 25px;
+        }
+        &:first-child{
+            margin-bottom: 32px;
+            @media (max-width: $md4 + px) {
+                margin-bottom: 25px;
+            }
+        }
+    }
+    input[type=submit] {
+        background: $mainBGC;
+        color: #fff;
+        font-size: 24px;
+        padding-left: 0;
+        font-weight: 300;
+        cursor: pointer;
+        @media (max-width: $md3 + px) {
+            font-size: 18px;
+        }
+    }
+
+}
+
+
 
 
 

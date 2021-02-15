@@ -1,7 +1,9 @@
 /*******************Dynamic block*************************/
 @@include('dynamicAdapt.js', {})
 
+/********************popup*****************************/
 
+@@include('popup.js', {})
 
 /*******************Burger menu*************************/
 let iconMenu =     document.querySelector('.icon-menu');
