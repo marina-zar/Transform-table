@@ -1,28 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Transform-table</title>
-        <link rel="stylesheet" type="text/css" href="css/app.min.css">
-    </head>
-    <body>
-        <div class="wrapper">
-            @@include('header.html')
-            <main class="page">
-
-                @@include('calcCost.html')
-
-                @@include('sale.html')
-
-
-
-                @@include('footer.html')
-                @@include('popup.html')
-            </main>
-        </div>
-        <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-        <script src="https://kit.fontawesome.com/86625738a0.js" crossorigin="anonymous"></script>
-        <script type="module" src="js/app.min.js"></script>
-    </body>
-</html>
+@@include('header.html')
+<main class="page">
+    <div class="page__container container">
+        <nav class="breadcrumbs">
+            <ul class="breadcrumbs__list">
+                <li><a href="" class="breadcrumbs__link">Главная<span> > </span></a></li>
+                <li><a href="" class="breadcrumbs__link">Каталог<span> > </span></a></li>
+                <li><a href="" class="breadcrumbs__link">Столы<span> > </span></a></li>
+                <li><span class="breadcrumbs__item">Стол «Standart» 1770*900*750 мм</span></li>
+            </ul>
+        </nav>
+    </div>
+    @@include('calcCost.html')
+    @@include('sale.html')
+    @@include('upBtn.html')
+    @@include('footer.html')
+    @@include('popup.html')
+</main>
