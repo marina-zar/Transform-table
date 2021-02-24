@@ -126,7 +126,7 @@
         background: $mainBGC;
         color: #fff;
         transition: all .3s ease-in-out;
-        &:hover {
+        &._active {
             border: 1px solid $mainColor;
             color: $mainColor;
             background: transparent;

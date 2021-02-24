@@ -122,12 +122,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.page .container-padding {
-  @media (max-width: $md3 + px) {
-    padding: 0 20px;
-  }
-}
-
 body {
     font-family: $fontFamily;
     color: $mainColor;
@@ -149,9 +143,16 @@ a {
 @import "footer";
 @import "popup";
 @import "catalog";
-
+@import "product";
 
 /********************************* Main content style *************************/
+
+h1.mainTitle {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 95px;
+}
 h2.mainTitle {
   font-family: 'Oswald', sans-serif;
   font-weight: 400;
@@ -515,6 +516,9 @@ nav.breadcrumbs {
   overflow: auto;
   margin-bottom: 60px;
   height: 35px;
+  @media (max-width: $md3 + px) {
+    margin: 20px 20px 60px;
+  }
 }
 ul.breadcrumbs__list {
   display: flex;
