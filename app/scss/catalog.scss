@@ -1,0 +1,93 @@
+.page__catalog {
+    margin-bottom: 0;
+}
+.catalog__actions.actions-catalog {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .choices {
+        flex: 0 1 24%;
+        margin-bottom: 0;
+        &__inner {
+            border-radius: 10px;
+            border: 1px solid $mainColor;
+            font-size: 24px;
+            padding: 3px 0 7px 30px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 300;
+            text-align: left;
+            transition: all .3s ease-in-out;
+        }
+    }
+}
+.choices:hover .choices__inner {
+    background: $mainBGC;
+    color: #fff;
+    border: 1px solid $mainBGC;
+}
+.choices[data-type*=select-one]:after {
+    content: '';
+    background: url('../img/page-product/vectorDown.png') no-repeat center;
+    right: 30px;
+    top: calc(50% - 5px);
+    border-width: 0;
+    margin-top: 0;
+    width: 23px;
+    height: 14px;
+    transition: all .3s ease-in-out;
+}
+
+.choices[data-type*=select-one].is-open:after {
+    margin-top: 0;
+    transform: rotate(180deg);
+}
+
+.choices:hover:after  {
+    content: '';
+    background: url('../img/page-product/vectorDownW.png') no-repeat center;
+
+}
+
+.choices.is-open .choices__inner {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    padding: 0 75px 45px 75px;
+    .page__upBtn {
+        flex: 1 1 55%;
+        justify-content: left;
+        padding: 0;
+    }
+}
+
+.pagination__page {
+    flex: 1 1 45%;
+    display: flex;
+    a {
+        display: block;
+        width: 78px;
+        height: 76px;
+        border-radius: 30% 60% 40% 50%;
+        border: 1px solid #fff;
+        box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
+        text-align: center;
+        line-height: 76px;
+        font-weight: 500;
+        font-size: 24px;
+        background: $mainBGC;
+        color: #fff;
+        transition: all .3s ease-in-out;
+        &:hover {
+            border: 1px solid $mainColor;
+            color: $mainColor;
+            background: transparent;
+        }
+    }
+    a + a {
+        margin-left: 17px;
+    }
+}

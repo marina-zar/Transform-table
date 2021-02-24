@@ -71,3 +71,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+/*******************Select Choices*************************/
+const multiSelect = () => {
+    const elements = document.querySelectorAll('.form');
+    elements.forEach(el => {
+        const choices = new Choices(el, {
+            itemSelectText: '',
+            searchEnabled: false,
+        });
+    });
+    };
+
+multiSelect();

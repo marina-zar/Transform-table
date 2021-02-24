@@ -48,7 +48,6 @@ nav, footer, header, aside {
 html, body {
     width: 100%;
     height: 100%;
-    //font-size: 100%;
     line-height: 1;
     font-size: 14px;
     -moz-text-size-adjust: 100%;
@@ -108,6 +107,26 @@ h1, h2, h3, h4, h5, h6 {
       padding: 0 10px;
     }
 }
+.page {
+  margin-top: 67px;
+  @media (max-width: $md3 + px) {
+    margin-top: 106px;
+  }
+  @media (max-width: $md4 + px) {
+    margin-top: 40px;
+  }
+  & .container {
+    @media (max-width: $md3 + px) {
+      padding: 0;
+    }
+  }
+}
+
+.page .container-padding {
+  @media (max-width: $md3 + px) {
+    padding: 0 20px;
+  }
+}
 
 body {
     font-family: $fontFamily;
@@ -124,10 +143,12 @@ a {
 
 
 /*************************** Подключение файлов стилей, форм ... ****************/
+@import "choices";
 @import "header";
 @import "home";
 @import "footer";
 @import "popup";
+@import "catalog";
 
 
 /********************************* Main content style *************************/
@@ -173,7 +194,6 @@ h2.mainTitle {
     @media (max-width: $md3 + px) {
         padding: 8px 40px 11px;
         font-weight: 200;
-        //border-radius: 5px;
     }
     @media (max-width: $md4 + px) {
         padding: 8px 25px 11px;
@@ -234,7 +254,6 @@ h2.mainTitle {
 /*************************** CalcCost **********************/
 .calcCost {
   background: url("../img/calcCost/calcCost-bg.png") no-repeat left top, linear-gradient(180deg, #E3CCBD 0%, #D5B19B 100%);
-  //background-size: auto, 100%;
   margin-bottom: 120px;
   @media (max-width: $md3 + px) {
     background-size: 320px auto, 100%;
@@ -289,7 +308,7 @@ h2.calcCost__title {
   }
   @media (max-width: $md4 + px) {
     font-size: 14px;
-    margin: 0px 20px 0;
+    margin: 0 20px 0;
   }
 }
 a.calcCost__btn {
@@ -494,12 +513,15 @@ p.item-user__text {
 /*************************** Breadcrumbs **********************/
 nav.breadcrumbs {
   overflow: auto;
+  margin-bottom: 60px;
+  height: 35px;
 }
 ul.breadcrumbs__list {
   display: flex;
   align-items: center;
+  white-space: nowrap;
   li {
-    padding: 0 10px 0 0;
+    margin: 0 10px 0 0;
     a.breadcrumbs__link,
     .breadcrumbs__item {
       display: block;
@@ -507,18 +529,22 @@ ul.breadcrumbs__list {
       font-weight: 400;
       font-size: 18px;
       line-height: 30px;
-      span {
-        margin: 0 0 0 20px;
-        font-size: 24px;
-        font-family: 'Oswald', sans-serif;
-        font-weight: 300;
+      padding: 0 40px 0 0;
+      @media (max-width: $md3 + px) {
+        font-size: 14px;
+      }
+    }
+    a.breadcrumbs__link {
+      background: url("../img/page-product/vector.png") no-repeat center right;
+      @media (max-width: $md3 + px) {
+        background-size: auto 40%;
       }
     }
     .breadcrumbs__item {
       font-weight: 200;
-      line-height: 30px;
-      vertical-align: middle;
     }
   }
 }
+
+
 
