@@ -294,8 +294,7 @@ h2.products__title {
       }
     }
     .item-product__footer {
-      //display: flex;
-      //flex-direction: column;
+
     }
     .item-product__prices {
       font-family: 'Oswald', sans-serif;
@@ -442,6 +441,7 @@ h2.products__title {
   margin-bottom: 180px;
   position: relative;
   z-index: -2;
+  margin-top: 180px;
   @media (max-width: $md1 + px) {
     padding-top: 70px;
   }

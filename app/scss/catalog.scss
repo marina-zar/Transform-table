@@ -1,6 +1,15 @@
 .page__catalog {
     margin-bottom: 0;
 }
+.catalog__title.mainTitle {
+    margin: 30px 0 120px 0;
+    @media (max-width: $md1 + px) {
+        margin: 20px 0 60px 0;
+    }
+    @media (max-width: $md4 + px) {
+        margin: 20px 0 40px 0;
+    }
+}
 .catalog__actions.actions-catalog {
     display: flex;
     align-items: center;
@@ -80,7 +89,12 @@
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
-
+.choices__list--dropdown .choices__item {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 36px;
+    font-family: 'Oswald',sans-serif;
+}
 .choices__list--single {
     @media (max-width: $md3 + px) {
         padding: 4px 16px 8px 4px;
